@@ -1,0 +1,181 @@
+
+<html>
+
+<head>
+	<title>Это пример использования стилей CSS</title>
+	<style type="text/css">
+	/* Заголовки примеров */
+		h2 {
+            color: navy;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 20px;
+		}
+
+	/* Блоки */
+		.col {
+            bottom: 2px solid #999;
+            background-repeat: 8px;
+            width: 45%;
+            float: left;
+            margin: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+		}
+		
+		.buk {
+            font-size: 36px;
+            font-weight: bold;
+            color: darkred;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+		}
+		
+	/* Таблица */
+		.hrow, .hcol {
+            background-color: #ddd;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #666;
+            padding: 8px;
+		}
+
+		.hcol, .hrow {
+            background-color: #b7b5b5;
+            border: none;
+		}
+
+		.cb,.cw {
+            border: 1px solid #999;
+		}
+
+		.cb,.cw {
+            width: 50px;
+            height: 50px;
+		}
+
+		.cb {
+            background-color: #0015ff;
+		}
+
+		.cw {
+            background-color: #fff700;
+		}
+
+		#sel {
+            background-color: #ff0000;
+		}
+		
+	/* Ссылка */
+		a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: red;
+            background-color: lightblue;
+            text-decoration: underline;
+        }
+		
+	/* Скрытый текст */
+        #s_hid {
+            border: 1px dotted black;
+        }
+
+        #s_hid span{
+            visibility: hidden;
+        }
+
+        #s_hid:hover span {
+            visibility: inherit;
+        }
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1 align="center">Примеры использования каскадных таблиц стилей (CSS)</h1>
+	</div>
+	
+	<div>
+		<h2 align="center">Пример первый. Оформление текста</h2>
+		<p>Шрифт может быть обычный, <span style="font-weight: bold;">полужирный</span>, <span style="font-style: italic;">курсивный</span>, а текст может даже быть <span style="border: 1px dotted black;">выделен пунктирной рамкой</span>. А ещё он может быть <span style=" color: red;">раз</span><span style="color: orange;">но</span><span style="color: green;">цвет</span><span style="color: blue;">ным</span>! А также иметь <span style="background-color: yellow;">выделение (т.е. цвет фона)</span>. А вот зачёркнутым текст сделать <span style="text-decoration: line-through;">нельзя</span> можно.
+	</div>
+	
+	<div>
+		<h2 align="center">Пример второй. Блоки</h2>
+		<div style="border: 5px ridge #333; padding: 15px; background-color: lightskyblue;" id="div1">
+			<p>Блок текста также может иметь рамку (например, широкую и выпуклую) и заливку, а также поля.</p>
+		</div>
+		<div style="position: fixed; top: 350px; right: 300px; border: 2px solid #333; background-color: #fff; padding: 10px; z-index: 10; width: 300px;" id="d_fixed">
+			<p>А этот блок и вовсе отображается поверх других, да ещё и не меняет положения при прокрутке страницы!</p>
+		</div>			
+		<div style="width:100%;">
+			<div style="border: 1px solid black; max-width: 400px;" class="col" id="div2">
+				<p>Блоки могут иметь разную высоту и ширину,...</p>
+			</div>
+			<div style="border: 1px solid black; border-radius: 10px;" class="col" id="div3">
+				<p>...а также располагаться рядом друг с другом. Углы у блока могут быть закруглены.</p>
+			</div>
+		</div>
+		<div style="clear:left;" align="center">
+			<div style="border: 1px dotted black; padding: 10px; max-width: 400px;" align="justify" id="div_buk">
+				<p><span class="buk">С</span> помощью стилей можно добиваться красивых визуальных эффектов, например выделить первую букву каждого абзаца в виде буквицы, как в старинных книгах.</p>
+				<p><span class="buk">К</span>лассы CSS позволяют делать подобные вещи в масштабах всего документа (а наследование и селекторы - в пределах, например, блока или раздела).</p>
+			</div>
+		</div>
+	</div>
+	
+	<div>
+		<h2 align="center">Пример третий. Таблицы, а также классы и идентификаторы</h2>
+		<table style="border-collapse:collapse; margin: auto;">
+			<tr>
+				<td></td>
+				<td class="hcol">А</td>
+				<td class="hcol">Б</td>
+				<td class="hcol">В</td>
+				<td class="hcol">Г</td>
+			</tr>
+			<tr>
+				<td class="hrow">1</td>
+				<td class="cb">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="hrow">2</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="hrow">3</td>
+				<td class="cb">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb" id="sel">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="hrow">4</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb">&nbsp;</td>
+				<td class="cw">&nbsp;</td>
+				<td class="cb">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div>
+		<h2 align="center">Пример четвёртый. Ссылки, а также псевдоклассы и видимость.</h2>
+		<p><a href="#a" name="a">Это ссылка, наведите на неё мышку</a> и она будет выглядеть <span>вот так.</span></p>
+		<p>А вот если навести мышку на текст справа, то он будет показан: <span id="s_hid"><span>это скрытый текст</span></span>.</p>
+	</div>
+</body>
+
+</html>
